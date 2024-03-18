@@ -1,0 +1,29 @@
+file:
+  all-india-po: classpath:postoffice.csv
+
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+          batch_size: 25
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+
+
+
+logging:
+  level:
+    org:
+      springframework:
+        web: info
+      hibernate:
+        orm:
+          jdbc:
+            bind: trace
